@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+.movieTab {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.searchBar {
+  transform: scale(3);
+}
