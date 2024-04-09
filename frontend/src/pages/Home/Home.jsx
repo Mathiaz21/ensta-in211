@@ -17,7 +17,7 @@ function Home() {
           params:{
             query: movieName
           }
-        }
+        } 
         )
       .then((response) => {
         setMovies(response.data.results)
@@ -44,7 +44,11 @@ function Home() {
         <h2>{movieName===""?"Films Populaires du moment :":(movies.length===0?"Aucun résultat :(":"Résultats de recherche :")}</h2>
         <div className="movieTab">
           {movies.map((movie, index) => (
-            <Movie key={index} title={movie.original_title} date={movie.release_date} poster={movie.poster_path}/>
+            <Movie 
+              key={index} 
+              title={movie.original_title} 
+              date={movie.release_date} 
+              poster={movie.poster_path}/>
           ))}
         </div>
       </header>
