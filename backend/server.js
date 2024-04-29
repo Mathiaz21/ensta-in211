@@ -9,11 +9,11 @@ import { appDataSource } from './datasource.js';
 
 const apiRouter = express.Router();
 
-// appDataSource
-  // .initialize()
-  // .then(() => {
-    console.log('Data Source has been initialized!');
-    const app = express();
+appDataSource
+.initialize()
+.then(() => {
+  console.log('Data Source has been initialized!');
+  const app = express();
 
     app.use(logger('dev'));
     app.use(cors());
@@ -25,7 +25,6 @@ const apiRouter = express.Router();
       res.send('Hello from Express!');
     });
     apiRouter.use('/users', usersRouter);
-
     apiRouter.use("/movies", moviesRouter);
 
     // Register API router
@@ -40,7 +39,7 @@ const apiRouter = express.Router();
     app.listen(port, () => {
       console.log(`Server listening at http://localhost:${port}`);
     });
-  // })
-  // .catch((err) => {
-  //   console.error('Error during Data Source initialization:', err);
-  // });
+  })
+  .catch((err) => {
+    console.error('Error during Data Source initialization:', err);
+  });
